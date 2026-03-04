@@ -1,0 +1,198 @@
+/* ==========================================
+   MAIN APP CONTAINER - LINUX TERMINAL
+   ========================================== */
+
+.App {
+  display: flex;
+  flex-direction: column;
+  background-color: #300A24;
+  min-height: 100vh;
+  color: #ffffff;
+  margin: 0;
+  padding: 16px 24px;
+  font-family: 'Fira Code', 'JetBrains Mono', 'Cascadia Code', 'SF Mono', Monaco, 'Courier New', monospace;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
+}
+
+/* Terminal window effect */
+.App::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+    linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  background-size: 100% 4px, 6px 100%;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.03;
+}
+
+/* Prompt container */
+.prompt {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* ASCII Art Banner Responsive */
+pre {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: pre;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  pre {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  pre {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 375px) {
+  pre {
+    font-size: 7px;
+  }
+}
+
+/* Body reset for terminal */
+body {
+  font-family: 'Fira Code', 'JetBrains Mono', 'Cascadia Code', 'SF Mono', Monaco, 'Courier New', monospace;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: #300A24;
+  color: #ffffff;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar - Linux terminal style */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a0618;
+  border-left: 1px solid rgba(78, 227, 44, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4ee32c;
+  border-radius: 0;
+  border: 2px solid #1a0618;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3cb824;
+}
+
+::-webkit-scrollbar-corner {
+  background: #1a0618;
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #4ee32c #1a0618;
+}
+
+/* Terminal cursor for the whole app */
+* {
+  cursor: default;
+}
+
+a, button, input {
+  cursor: pointer;
+}
+
+/* Prevent text selection drag visual */
+.App * {
+  user-select: text;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+}
+
+/* Animation for content fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.prompt > div {
+  animation: fadeIn 0.15s ease-out;
+}
+
+/* Responsive padding */
+@media (max-width: 768px) {
+  .App {
+    padding: 10px 12px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .App {
+    padding: 8px 10px;
+  }
+
+  .App::before {
+    opacity: 0.01;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+}
+
+@media (max-width: 375px) {
+  .App {
+    padding: 6px 8px;
+  }
+}
+
+/* Print styles - hide terminal chrome */
+@media print {
+  .App::before {
+    display: none;
+  }
+  
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .command-suggestions {
+    display: none;
+  }
+}

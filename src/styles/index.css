@@ -1,0 +1,189 @@
+/* ==========================================
+   GLOBAL STYLES - LINUX TERMINAL BASE
+   ========================================== */
+
+/* Import terminal fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* Global reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Root element */
+html {
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+/* Body - Terminal base */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: 'Fira Code', 'JetBrains Mono', 'Cascadia Code', 'SF Mono', Monaco, 'Courier New', monospace;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #300A24;
+  color: #ffffff;
+  font-feature-settings: "liga" 0, "calt" 0; /* Disable ligatures */
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* Code elements */
+code {
+  font-family: 'Fira Code', 'JetBrains Mono', 'Cascadia Code', 'SF Mono', Monaco, 'Courier New', monospace;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+/* Root app container */
+#root {
+  min-height: 100vh;
+  background-color: #300A24;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* Selection styling - Terminal green */
+::selection {
+  background-color: #4ee32c;
+  color: #300A24;
+  text-shadow: none;
+}
+
+::-moz-selection {
+  background-color: #4ee32c;
+  color: #300A24;
+  text-shadow: none;
+}
+
+/* Link defaults */
+a {
+  color: #3b78ff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #4ee32c;
+  text-decoration: underline;
+}
+
+/* Button reset */
+button {
+  font-family: 'Fira Code', 'JetBrains Mono', 'Cascadia Code', monospace;
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+/* Form elements */
+input, textarea {
+  font-family: 'Fira Code', 'JetBrains Mono', 'Cascadia Code', monospace;
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* Remove input autofill background */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #300A24 inset !important;
+  -webkit-text-fill-color: #ffffff !important;
+  caret-color: #4ee32c !important;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+  line-height: 1.3;
+  margin: 0;
+}
+
+/* Paragraphs */
+p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Lists */
+ul, ol {
+  margin: 0;
+  padding: 0;
+}
+
+/* Focus visible for accessibility */
+*:focus-visible {
+  outline: 2px solid #4ee32c;
+  outline-offset: 2px;
+}
+
+/* Disable focus ring on mouse clicks */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Smooth scrolling */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  body {
+    background-color: #000000;
+    color: #ffffff;
+  }
+  
+  ::selection {
+    background-color: #00ff00;
+    color: #000000;
+  }
+}
+
+/* Print styles */
+@media print {
+  body {
+    background-color: white;
+    color: black;
+  }
+  
+  #root {
+    background-color: white;
+  }
+}

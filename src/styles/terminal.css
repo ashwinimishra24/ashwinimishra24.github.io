@@ -1,0 +1,538 @@
+/* ==========================================
+   AUTHENTIC LINUX TERMINAL STYLING
+   ========================================== */
+
+/* Terminal font stack - prioritize actual terminal fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --terminal-bg: #300A24;
+  --terminal-text: #ffffff;
+  --terminal-green: #4ee32c;
+  --terminal-blue: #3b78ff;
+  --terminal-yellow: #ffff00;
+  --terminal-red: #ff5555;
+  --terminal-gray: #888888;
+  --line-height: 1.3;
+  --char-width: 0.6em;
+}
+
+/* Command history: consistent spacing between prompt lines */
+.command-history {
+  margin: 0;
+  padding: 0;
+}
+
+.command-history-item {
+  margin-bottom: 10px;
+}
+
+.command-history-item:last-child {
+  margin-bottom: 10px;
+}
+
+/* Terminal prompt styling */
+.prompt-form {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  margin: 0;
+  padding: 0;
+  color: var(--terminal-text);
+  font-family: 'Fira Code', 'JetBrains Mono', 'Cascadia Code', 'SF Mono', Monaco, 'Courier New', monospace;
+  font-size: 16px;
+  line-height: var(--line-height);
+  font-weight: 400;
+  min-height: 24px;
+}
+
+.prompt-form p {
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  font-size: 16px;
+  line-height: var(--line-height);
+}
+
+/* Input container */
+.input-container {
+  margin-bottom: 8px;
+}
+
+/* Terminal input styling */
+.terminal-input,
+input {
+  background: transparent;
+  border: none;
+  outline: none;
+  caret-color: var(--terminal-green);
+  color: var(--terminal-text);
+  padding: 0;
+  margin: 0 0 0 8px;
+  font-family: 'Fira Code', 'JetBrains Mono', 'Cascadia Code', 'SF Mono', Monaco, 'Courier New', monospace;
+  font-size: 16px;
+  line-height: var(--line-height);
+  font-weight: 400;
+  flex: 1;
+  width: 100%;
+  font-feature-settings: "liga" 0, "calt" 0; /* Disable ligatures for pure terminal feel */
+}
+
+/* Blinking cursor effect */
+.terminal-input {
+  caret-shape: block;
+  animation: blink-caret 1s step-end infinite;
+}
+
+@keyframes blink-caret {
+  from, to {
+    caret-color: var(--terminal-green);
+  }
+  50% {
+    caret-color: transparent;
+  }
+}
+
+/* Placeholder styling */
+.terminal-input::placeholder,
+input::placeholder {
+  color: var(--terminal-gray);
+  opacity: 0.6;
+  font-style: italic;
+}
+
+.terminal-input:focus::placeholder,
+input:focus::placeholder {
+  opacity: 0.4;
+}
+
+/* Command suggestions styling */
+.command-suggestions {
+  margin-left: 8px;
+  margin-top: 4px;
+  margin-bottom: 8px;
+  font-family: 'Fira Code', 'JetBrains Mono', 'Cascadia Code', 'SF Mono', Monaco, 'Courier New', monospace;
+  font-size: 14px;
+  line-height: var(--line-height);
+  color: var(--terminal-gray);
+}
+
+.suggestion-hint {
+  margin-bottom: 4px;
+  color: var(--terminal-gray);
+}
+
+.suggestion-hint kbd {
+  display: inline-block;
+  padding: 2px 6px;
+  font-size: 12px;
+  line-height: 1;
+  color: var(--terminal-text);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  margin: 0 4px;
+}
+
+.suggestion-text .highlight {
+  color: var(--terminal-green);
+  font-weight: 500;
+}
+
+.matches-list {
+  color: var(--terminal-gray);
+  margin-top: 4px;
+}
+
+.matches-label {
+  color: var(--terminal-blue);
+}
+
+.match-item {
+  color: var(--terminal-yellow);
+  margin-right: 4px;
+}
+
+/* Prompt answer styling with uniform spacing */
+.prompt-answer {
+  margin: 0 0 12px 8px;
+  font-weight: 400;
+  color: var(--terminal-text);
+  font-size: 16px;
+  line-height: var(--line-height);
+  font-family: 'Fira Code', 'JetBrains Mono', 'Cascadia Code', 'SF Mono', Monaco, 'Courier New', monospace;
+  white-space: normal;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+  animation: fadeInUp 0.3s ease-out;
+}
+
+/* Fade in animation for responses */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Table styling - uniform spacing */
+.prompt-answer table {
+  border-collapse: collapse;
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  table-layout: auto;
+}
+
+.prompt-answer td,
+.prompt-answer th {
+  color: var(--terminal-text);
+  padding: 2px 16px 2px 0;
+  text-align: left;
+  vertical-align: top;
+  line-height: var(--line-height);
+  font-size: 16px;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.prompt-answer td:first-child {
+  color: var(--terminal-green);
+  font-weight: 500;
+  min-width: 100px;
+  white-space: nowrap;
+}
+
+.prompt-answer td:last-child {
+  padding-right: 0;
+  width: 100%;
+}
+
+/* Definition list styling - uniform spacing */
+.prompt-answer dl {
+  margin: 0;
+  line-height: var(--line-height);
+}
+
+.prompt-answer dt {
+  font-weight: 500;
+  margin-top: 12px;
+  margin-bottom: 2px;
+  color: var(--terminal-yellow);
+  font-size: 16px;
+  line-height: var(--line-height);
+}
+
+.prompt-answer dt:first-child {
+  margin-top: 0;
+}
+
+.prompt-answer dd {
+  margin-left: 24px;
+  margin-bottom: 4px;
+  color: var(--terminal-text);
+  line-height: var(--line-height);
+}
+
+/* Unordered list styling - uniform spacing */
+.prompt-answer ul {
+  margin: 0 0 0 32px;
+  padding: 0;
+  list-style-type: disc;
+}
+
+.prompt-answer li {
+  margin-bottom: 4px;
+  line-height: var(--line-height);
+  color: var(--terminal-text);
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.prompt-answer li:last-child {
+  margin-bottom: 0;
+}
+
+.prompt-answer li::marker {
+  color: var(--terminal-green);
+}
+
+/* Paragraph styling */
+.prompt-answer p {
+  margin: 0;
+  padding: 0;
+  line-height: var(--line-height);
+}
+
+/* Highlights - terminal yellow */
+.highlights {
+  color: var(--terminal-yellow);
+  font-weight: 500;
+  background: none;
+}
+
+/* Links styling */
+.prompt-answer a {
+  color: var(--terminal-blue);
+  text-decoration: underline;
+  transition: color 0.2s ease;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.prompt-answer a:hover {
+  color: var(--terminal-green);
+  text-decoration: none;
+}
+
+.prompt-answer a:visited {
+  color: #8b8bff;
+}
+
+/* Touch-friendly links on mobile */
+@media (max-width: 768px) {
+  .prompt-answer a {
+    display: inline-block;
+    padding: 2px 0;
+    min-height: 32px;
+    line-height: 1.5;
+  }
+}
+
+/* Pre-formatted text (for ASCII art) */
+pre {
+  margin: 0;
+  padding: 0;
+  font-family: 'Fira Code', 'JetBrains Mono', 'Cascadia Code', 'SF Mono', Monaco, 'Courier New', monospace;
+  line-height: 1.1;
+  font-size: 14px;
+  color: var(--terminal-green);
+  letter-spacing: 0;
+  font-weight: 400;
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+/* Selection styling - Linux terminal style */
+::selection {
+  background-color: var(--terminal-green);
+  color: var(--terminal-bg);
+}
+
+::-moz-selection {
+  background-color: var(--terminal-green);
+  color: var(--terminal-bg);
+}
+
+/* Responsive design with maintained spacing */
+@media (max-width: 768px) {
+  :root {
+    --line-height: 1.4;
+  }
+
+  .prompt-form,
+  .terminal-input,
+  input,
+  .prompt-answer,
+  .prompt-answer td,
+  .prompt-answer dt,
+  .prompt-answer dd,
+  .prompt-answer li {
+    font-size: 13px;
+  }
+
+  pre {
+    font-size: 10px;
+    overflow-x: auto;
+    white-space: pre;
+  }
+
+  .command-suggestions {
+    font-size: 11px;
+  }
+
+  .prompt-answer td {
+    padding: 2px 12px 2px 0;
+  }
+
+  .prompt-answer td:first-child {
+    min-width: 80px;
+  }
+
+  .prompt-answer ul {
+    margin-left: 20px;
+  }
+
+  .prompt-answer dt {
+    margin-top: 10px;
+  }
+
+  .prompt-answer li {
+    margin-bottom: 3px;
+  }
+
+  .prompt-answer table {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --line-height: 1.4;
+  }
+
+  .prompt-form {
+    flex-wrap: wrap;
+  }
+
+  .prompt-form p {
+    font-size: 12px;
+  }
+
+  .terminal-input,
+  input {
+    font-size: 12px;
+    margin-left: 4px;
+  }
+
+  .prompt-answer {
+    font-size: 12px;
+    margin-left: 4px;
+    max-width: 100%;
+  }
+
+  .prompt-answer td,
+  .prompt-answer dt,
+  .prompt-answer dd,
+  .prompt-answer li {
+    font-size: 12px;
+  }
+
+  .prompt-answer td:first-child {
+    min-width: 70px;
+    font-size: 11px;
+  }
+
+  .prompt-answer td {
+    padding: 2px 8px 2px 0;
+  }
+
+  pre {
+    font-size: 8px;
+    line-height: 1.0;
+    overflow-x: auto;
+    white-space: pre;
+  }
+
+  .command-suggestions {
+    font-size: 10px;
+    margin-left: 4px;
+  }
+
+  .prompt-answer ul {
+    margin-left: 16px;
+  }
+
+  .prompt-answer dt {
+    margin-top: 8px;
+  }
+
+  .prompt-answer dd {
+    margin-left: 16px;
+  }
+
+  .prompt-answer li {
+    margin-bottom: 2px;
+  }
+
+  .prompt-answer table {
+    font-size: 12px;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .input-container {
+    margin-bottom: 6px;
+  }
+}
+
+/* Extra small devices (iPhone SE, older phones) */
+@media (max-width: 375px) {
+  :root {
+    --line-height: 1.4;
+  }
+
+  .prompt-form p {
+    font-size: 11px;
+  }
+
+  .terminal-input,
+  input {
+    font-size: 11px;
+  }
+
+  .prompt-answer,
+  .prompt-answer td,
+  .prompt-answer dt,
+  .prompt-answer dd,
+  .prompt-answer li {
+    font-size: 11px;
+  }
+
+  .prompt-answer td:first-child {
+    min-width: 60px;
+    font-size: 10px;
+  }
+
+  pre {
+    font-size: 7px;
+  }
+
+  .prompt-answer ul {
+    margin-left: 14px;
+  }
+
+  .prompt-answer dd {
+    margin-left: 14px;
+  }
+}
+
+/* Landscape mode for phones */
+@media (max-height: 500px) and (orientation: landscape) {
+  .App {
+    padding: 8px;
+  }
+
+  pre {
+    font-size: 8px;
+  }
+}
+
+/* Accessibility - ensure good contrast */
+@media (prefers-contrast: high) {
+  :root {
+    --terminal-text: #ffffff;
+    --terminal-green: #00ff00;
+    --terminal-blue: #5599ff;
+    --terminal-yellow: #ffff00;
+  }
+}
+
+/* Dark mode support (already dark, but for consistency) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --terminal-bg: #300A24;
+    --terminal-text: #ffffff;
+  }
+}
