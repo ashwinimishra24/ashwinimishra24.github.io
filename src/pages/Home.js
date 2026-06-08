@@ -4,6 +4,7 @@ import Terminal from "../components/layout/Terminal";
 import { useCommandHistory } from "../hooks/useCommandHistory";
 import { useWelcomeMessage } from "../hooks/useWelcomeMessage";
 import { parseCommandString } from "../services/commandService";
+import { APP_CONFIG } from "../config/appConfig";
 import "../styles/App.css";
 
 /**
@@ -28,14 +29,28 @@ const Home = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const windowTitle = `${APP_CONFIG.username}@${APP_CONFIG.hostname}: ~`;
+
   return (
     <div className="App">
-      <Header />
-      <Terminal
-        prompts={promptsArray}
-        onAddPrompt={addPrompt}
-        onClearHistory={clearPrompts}
-      />
+      <div className="terminal-window">
+        <div className="terminal-titlebar">
+          <span className="tb-dots" aria-hidden="true">
+            <span className="tb-dot tb-dot--red" />
+            <span className="tb-dot tb-dot--yellow" />
+            <span className="tb-dot tb-dot--green" />
+          </span>
+          <span className="terminal-title">{windowTitle}</span>
+        </div>
+        <div className="terminal-body">
+          <Header />
+          <Terminal
+            prompts={promptsArray}
+            onAddPrompt={addPrompt}
+            onClearHistory={clearPrompts}
+          />
+        </div>
+      </div>
     </div>
   );
 };

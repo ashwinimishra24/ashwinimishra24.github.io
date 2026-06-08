@@ -97,7 +97,7 @@ export const formatQuote = (quote) => {
  * @returns {string} HTML formatted joke
  */
 export const formatJoke = (joke) => {
-  return `<p style='color: #ffff00;'>${joke.setup}</p><p style='margin-top: 4px; color: #4ee32c;'>${joke.punchline}</p><p style='margin-top: 8px; color: #888;'>😄 Type 'joke' again for more laughs!</p>`;
+  return `<p style='color: #ffff00;'>${joke.setup}</p><p style='margin-top: 4px; color: #5fc95a;'>${joke.punchline}</p><p style='margin-top: 8px; color: #888;'>😄 Type 'joke' again for more laughs!</p>`;
 };
 
 /**

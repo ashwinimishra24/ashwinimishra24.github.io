@@ -63,13 +63,13 @@ code {
 
 /* Selection styling - Terminal green */
 ::selection {
-  background-color: #4ee32c;
+  background-color: #5fc95a;
   color: #300A24;
   text-shadow: none;
 }
 
 ::-moz-selection {
-  background-color: #4ee32c;
+  background-color: #5fc95a;
   color: #300A24;
   text-shadow: none;
 }
@@ -81,7 +81,7 @@ a {
 }
 
 a:hover {
-  color: #4ee32c;
+  color: #5fc95a;
   text-decoration: underline;
 }
 
@@ -111,7 +111,7 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 30px #300A24 inset !important;
   -webkit-text-fill-color: #ffffff !important;
-  caret-color: #4ee32c !important;
+  caret-color: #5fc95a !important;
 }
 
 /* Headings */
@@ -135,7 +135,7 @@ ul, ol {
 
 /* Focus visible for accessibility */
 *:focus-visible {
-  outline: 2px solid #4ee32c;
+  outline: 2px solid #5fc95a;
   outline-offset: 2px;
 }
 

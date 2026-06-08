@@ -115,7 +115,7 @@ export function getResponse(parsedCommand) {
     res = "";
   } else if (COMMANDS[command] === null && (command === "help" || command === "man")) {
     // Categorized help system
-    res = "<p style='color: #4ee32c; font-weight: 500;'>📚 Available Commands</p>";
+    res = "<p style='color: #5fc95a; font-weight: 500;'>📚 Available Commands</p>";
     
     // Main Commands
     res += "<p style='color: #ffff00; margin-top: 12px; font-weight: 500;'>Main Commands:</p>";
@@ -167,7 +167,7 @@ export function getResponse(parsedCommand) {
       res = formatTip(tip);
     } else if (command === 'date') {
       // Dynamic date command
-      res = `<p style='color: #4ee32c;'>${new Date().toLocaleString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' })}</p><p style='margin-top: 4px; color: #888;'>Timezone: ${Intl.DateTimeFormat().resolvedOptions().timeZone}</p>`;
+      res = `<p style='color: #5fc95a;'>${new Date().toLocaleString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' })}</p><p style='margin-top: 4px; color: #888;'>Timezone: ${Intl.DateTimeFormat().resolvedOptions().timeZone}</p>`;
     } else {
       // Static response from COMMANDS
       res = COMMANDS[command].response;

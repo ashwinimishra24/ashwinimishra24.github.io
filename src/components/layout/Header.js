@@ -1,17 +1,13 @@
 import React from "react";
-import { BANNER } from "../../config/appConfig";
+import AsciiAnimation from "../common/AsciiAnimation";
 import "../../styles/terminal.css";
 
 /**
- * Header component - displays the ASCII art banner
+ * Header component - displays the animated ASCII banner (Ghostty-inspired loop)
  * Optimized with React.memo for performance
  */
 const Header = React.memo(() => {
-  return (
-    <div style={{ marginLeft: "0.8vw" }}>
-      <pre>{BANNER}</pre>
-    </div>
-  );
+  return <AsciiAnimation />;
 });
 
 Header.displayName = 'Header';

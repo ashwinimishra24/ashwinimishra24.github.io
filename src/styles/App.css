@@ -5,11 +5,12 @@
 .App {
   display: flex;
   flex-direction: column;
+  align-items: center;
   background-color: #300A24;
   min-height: 100vh;
   color: #ffffff;
   margin: 0;
-  padding: 16px 24px;
+  padding: 28px 16px;
   font-family: 'Fira Code', 'JetBrains Mono', 'Cascadia Code', 'SF Mono', Monaco, 'Courier New', monospace;
   overflow-x: hidden;
   overflow-y: auto;
@@ -99,7 +100,7 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #4ee32c;
+  background: #5fc95a;
   border-radius: 0;
   border: 2px solid #1a0618;
 }
@@ -115,7 +116,7 @@ html {
 /* Firefox scrollbar */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #4ee32c #1a0618;
+  scrollbar-color: #5fc95a #1a0618;
 }
 
 /* Terminal cursor for the whole app */

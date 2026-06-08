@@ -235,17 +235,6 @@ export const COMMANDS = {
               ashwinimishra24@gmail.com
             </a>
           </td>
-        </tr>
-        <tr>
-          <td>Phone:</td>
-          <td>
-            <a href="tel:+919546370737" 
-               style="text-decoration: none; color:yellow;">
-              +91 9546370737
-            </a>
-          </td>
-        </tr>
-        <tr>
           <td>LinkedIn:</td>
           <td>
             <a href="https://www.linkedin.com/in/ashwinimishra24/" 
@@ -272,15 +261,6 @@ export const COMMANDS = {
             <a href="mailto:ashwinimishra24@gmail.com" 
                style="text-decoration: none; color:yellow;">
               ashwinimishra24@gmail.com
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td>Whatsapp:</td>
-          <td>
-            <a href="tel:+919546370737" 
-               style="text-decoration: none; color:yellow;">
-              +91 9546370737
             </a>
           </td>
         </tr>
@@ -394,7 +374,7 @@ export const COMMANDS = {
   welcome: {
     cue: "Welcome message",
     response: `
-      <p style='color: #4ee32c; font-weight: 500;'>
+      <p style='color: #5fc95a; font-weight: 500;'>
         👋 Welcome to Ashwini's Terminal Portfolio!
       </p>
       <p style='margin-top: 8px;'>
@@ -419,7 +399,7 @@ export const COMMANDS = {
   whoami: {
     cue: "Current user info",
     response: `
-      <p style='color: #4ee32c;'>guest@ashwini-portfolio</p>
+      <p style='color: #5fc95a;'>guest@ashwini-portfolio</p>
       <p style='margin-top: 4px;'>
         You are browsing as: <span class='highlights'>Guest User</span>
       </p>
@@ -465,8 +445,8 @@ export const COMMANDS = {
   matrix: {
     cue: "Enter the matrix",
     response: `
-      <p style='color: #4ee32c; font-weight: 500;'>Wake up, Neo...</p>
-      <p style='margin-top: 4px; color: #4ee32c;'>The Matrix has you...</p>
+      <p style='color: #5fc95a; font-weight: 500;'>Wake up, Neo...</p>
+      <p style='margin-top: 4px; color: #5fc95a;'>The Matrix has you...</p>
       <p style='margin-top: 4px;'>Follow the white rabbit. 🐰</p>
       <p style='margin-top: 8px; font-style: italic; color: #888;'>
         Knock, knock, Neo.
@@ -480,7 +460,7 @@ export const COMMANDS = {
   fun: {
     cue: "List of fun commands",
     response: `
-      <p style='color: #4ee32c; font-weight: 500;'>
+      <p style='color: #5fc95a; font-weight: 500;'>
         🎉 Easter Eggs & Fun Commands:
       </p>
       <table style='margin-top: 8px;'>
@@ -532,7 +512,7 @@ export const COMMANDS = {
   banner: {
     cue: "Display ASCII art banner",
     response: `
-      <pre style='color: #4ee32c;'>
+      <pre style='color: #5fc95a;'>
  █████╗ ███████╗██╗  ██╗██╗    ██╗██╗███╗   ██╗██╗   
 ██╔══██╗██╔════╝██║  ██║██║    ██║██║████╗  ██║██║   
 ███████║███████╗███████║██║ █╗ ██║██║██╔██╗ ██║██║   
